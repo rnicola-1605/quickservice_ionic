@@ -1,0 +1,23 @@
+<ion-view class="feeds-categories-view" title="Mais servi&ccedil;os" cache-view="false">
+    <ion-content>
+        <div class="item item-divider">Servi&ccedil;os oferecidos:</div>
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+              <input type="text" placeholder="Buscar...">
+            </label>
+            <button class="button button-small">Buscar</button>
+        </div>
+        <div class="row categories-list">
+            <div ng-repeat="servico in lista_servicos" class="col col-50">
+                <!-- ui-sref="app.category-feeds({categoryId: (servico.titulo | slugify)})" -->
+                <a class="feed-category" ng-click="gerenciarCadastroServico(servico.id, servico.titulo, servico.descricao)">
+                    <pre-img ratio="_1_1" helper-class="square-image">
+                        <img class="category-image" ng-src="{{servico.imagem}}" spinner-on-load>
+                    </pre-img>
+                    <div class="category-bg"></div>
+                    <span class="category-title">{{servico.titulo}}</span>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

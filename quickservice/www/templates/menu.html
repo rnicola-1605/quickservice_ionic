@@ -1,0 +1,59 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content class="post-size-14px">
+    <ion-nav-bar class="bar app-top-bar">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="main-menu" expose-aside-when="large">
+    <ion-content>
+      <ion-list>
+        <ion-item class="heading-item item item-avatar" nav-clear menu-close ui-sref="app.profile">
+          <div class="user-image-container">
+            <pre-img ratio="_1_1" helper-class="rounded-image">
+              <!-- ng-src="https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg" -->
+              <img class="user-image" ng-src="img/profile_pic.jpg" spinner-on-load>
+            </pre-img>
+          </div>
+          <h2 class="greeting">Ol&aacute; {{dadosSession.nome}}</h2>
+          <p class="message" ng-show="dadosSession.tipo_usuario == '1'">Sou Prestador!</p>
+          <p class="message" ng-show="dadosSession.tipo_usuario == '2'">Sou Cliente!</p>
+          <!-- <p class="message">Bem-vindo</p> -->
+        </ion-item>
+        <ion-item nav-clear menu-close ng-show="dadosSession.tipo_usuario == '2'">
+          <!--<i class="icon ion-bookmark"></i>-->
+          <h2 class="menu-text" ui-sref="tab.dash-cliente">Buscar Profissionais</h2>
+        </ion-item>
+        <ion-item nav-clear menu-close ng-show="dadosSession.tipo_usuario == '1'">
+          <h2 class="menu-text" ui-sref="tab.cadastrar_servico">Cadastrar Servi&ccedil;os</h2>
+        </ion-item>
+        <ion-item nav-clear menu-close ng-show="dadosSession.tipo_usuario == '1'">
+          <h2 class="menu-text" ui-sref="tab.meus_servicos">Meus Servi&ccedil;os</h2>
+        </ion-item>
+        <ion-item nav-clear menu-close>
+          <!--<i class="icon ion-radio-waves"></i>-->
+          <h2 class="menu-text">Hist&oacute;rico</h2>
+        </ion-item>
+        <ion-item nav-clear menu-close>
+          <!--<i class="icon ion-social-wordpress"></i>-->
+          <h2 class="menu-text">Pagamentos</h2>
+        </ion-item>
+        <ion-item nav-clear menu-close>
+          <!--<i class="icon ion-document"></i>-->
+          <h2 class="menu-text" ng-controller="configuracaoCtrl" ng-click="showDeslogarPopup()">Logout</h2>
+        </ion-item>
+        <ion-item nav-clear menu-close>
+          <!--<i class="icon ion-gear-a"></i>-->
+          <h2 class="menu-text" ui-sref="tab.configuracao">Configura&ccedil;&otilde;es</h2>
+        </ion-item>
+
+    </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

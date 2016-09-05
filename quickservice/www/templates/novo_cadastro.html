@@ -1,0 +1,109 @@
+<ion-view class="signup-view auth-view" title="Cadastro - Passo {{cadastro.passo}}" cache-view="true">
+    <!-- feeds-categories-view -->
+    <!-- class="signup-view auth-view" -->
+    <ion-content>
+        <div class="row-top">
+          <div class="col col-center text-center">
+            <img src="img/logo.png" class="logo-cadastro">
+          </div>
+        </div>
+        <form name="cadastro_form" class="" novalidate ng-cloak>
+        <span ng-show="cadastro.passo == 1">
+            <div class="item item-divider">Dados Iniciais</div>
+            <div class="list">
+                <label class="item item-input item-select">
+                    <div class="input-label">Tipo de cadastro</div>
+                    <select name="id_tipo_usuario" ng-model="cadastro.id_tipo_usuario">
+                        <option value="1">Prestador</option>
+                        <option value="2">Cliente</option>
+                    </select>
+                </label>
+            </div>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nome:</span>
+                    <input type="text" name="nome" placeholder="Digite seu nome" ng-model="cadastro.nome" ng-minlength="5" required>
+                </label>
+                <div class="error-container" ng-show="cadastro_form.nome.$error" ng-messages="cadastro_form.nome.$error">
+                  <div ng-messages-include="error-messages.html"></div>
+                </div>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Sobrenome:</span>
+                    <input type="text" name="sobrenome" ng-model="cadastro.sobrenome" placeholder="Digite seu sobrenome">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">E-mail:</span>
+                    <input type="text" name="email" ng-model="cadastro.email" placeholder="Digite um e-mail v&aacute;lido" required ng-minlength="10">
+                </label>
+                <div class="error-container" ng-show="cadastro_form.email.$error" ng-messages="cadastro_form.email.$error">
+                  <div ng-messages-include="error-messages.html"></div>
+                </div>
+            </div>
+        </span>
+        <span ng-show="cadastro.passo == 2">
+            <div class="item item-divider">Contato</div>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Telefone:</span>
+                    <input type="text" placeholder="DDD" name="ddd_1" ng-model="cadastro.ddd_1" ng-maxlength="2" required/>
+                    <input type="text" placeholder="Digite seu telefone" name="telefone_1" ng-model="cadastro.telefone_1" ng-minlength="8" ng-maxlength="8" required/>
+                </label>
+                <!-- <div class="error-container" ng-show="cadastro_form.ddd_1.$error" ng-messages="cadastro_form.ddd_1.$error">
+                  <div ng-messages-include="error-messages.html"></div>
+                </div> -->
+                <div class="error-container" ng-show="cadastro_form.telefone_1.$error" ng-messages="cadastro_form.telefone_1.$error">
+                  <div ng-messages-include="error-messages.html"></div>
+                </div>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Celular:</span>
+                    <input type="text" placeholder="DDD" name="ddd_2" ng-model="cadastro.ddd_2" ng-minlength="2">
+                    <input type="text" placeholder="Digite seu celular" name="celular_2" ng-model="cadastro.celular_2" ng-minlength="8" ng-maxlength="8"/>
+                </label>
+            </div>
+        </span>
+        <span ng-show="cadastro.passo == 3">
+            <div class="item item-divider">Confirma&ccedil;&atilde;o</div>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Senha:</span>
+                    <input type="password" placeholder="Senha" ng-model="cadastro.senha" name="senha" ng-maxlength="15" required/>
+                </label>
+                <div class="error-container" ng-show="cadastro_form.senha.$error" ng-messages="cadastro_form.senha.$error">
+                  <div ng-messages-include="error-messages.html"></div>
+                </div>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Confirma&ccedil;&atilde;o da senha:</span>
+                    <input type="password" placeholder="Senha" name="confirma_senha" ng-model="cadastro.confirma_senha" ng-maxlength="15" required/>
+                </label>
+                <div class="error-container" ng-show="cadastro_form.confirma_senha.$error" ng-messages="cadastro_form.confirma_senha.$error">
+                  <div ng-messages-include="error-messages.html"></div>
+                </div>
+            </div>
+            <div class="item item-input-inset">
+                <button class="button button-full button-positive" type="submit" ng-click="cadastrar()">Cadastrar</button>
+            </div>
+        </span>
+        <div class="item item-input-inset" ng-show="cadastro.passo < 3">
+            <button class="button button-full button-assertive" ng-click="proximo_passo()">Avan&ccedil;ar</button>
+        </div>
+        <div class="item item-input-inset">
+            <button class="button button-full button-dark" ng-show="cadastro.passo <= 3 && cadastro.passo > 1" ng-click="passo_anterior()">Voltar</button>
+        </div>
+        </form>
+    </ion-content>
+</ion-view>
+
+<script id="error-messages.html" type="text/ng-template">
+<div class="error" ng-message="required">
+    <i class="ion-information-circled"></i> 
+    Este campo &eacute; obrigat&oacute;rio!
+</div>
+<div class="error" ng-message="minlength">
+    <i class="ion-information-circled"></i> 
+    O valor m&iacute;nimo  de caracteres n&atilde;o foi atingido!
+</div>
+<div class="error" ng-message="maxlength">
+    <i class="ion-information-circled"></i> 
+    O valor m&aacute;ximo de caracteres foi atingido!
+</div>
+</script>

@@ -1,0 +1,76 @@
+/* Empty. Add your own CSS if you like */
+
+.login-container-view {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    height: 100%;
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efad62), color-stop(100%,#f7d47c));
+    background: -webkit-linear-gradient(top, #efad62 0%,#f7d47c 100%);*/
+}
+
+.login-container-cor {
+	background-color: #819FF7;
+}
+
+.logo{
+	width: 60%;
+	height: 90%;
+}
+
+.logo-cadastro{
+	width: 40%;
+	height: 90%;
+}
+
+.login-container > .button-row img {
+    max-width: 80%;
+}
+
+.login-container > .header {
+    -webkit-flex: 4;
+    padding-top: 20px;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.scroll {
+    height: 100%;
+}
+
+.error-container {
+  margin: 5px 0;
+}
+ 
+.error-container:last-child {
+    margin: 5px 0 0;
+}
+ 
+.error {
+  padding: 10px 16px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #555;
+  vertical-align: middle;
+}
+ 
+.error i {
+  font-size: 24px;
+  color: #B83E2C;  
+  vertical-align: middle;
+}
+ 
+.last-error-container > .error {
+  padding: 10px 16px 0;
+}
+ 
+.has-errors {
+  border-bottom: 3px solid #B83E2C;
+}
+ 
+.no-errors {
+  border-bottom: 3px solid green;
+}

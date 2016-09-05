@@ -1,0 +1,58 @@
+[
+    {
+        "id":"1",
+        "titulo":"Chaveiro",
+        "descricao":"Profissionais que prestam serviços de chaveiro.",
+        "imagem":"img/chaveiro.jpg",
+        "url":""
+    },
+    {
+        "id":"2",
+        "titulo":"Mecanico",
+        "descricao":"Profissionais que prestam serviços de mecanica e mecanica diesel.",
+        "imagem":"img/mecanico.gif",
+        "url":""
+    },
+    {
+        "id":"3",
+        "titulo":"Eletricista",
+        "descricao":"Profissionais que prestam serviços de eletricista.",
+        "imagem":"img/eletricista.png",
+        "url":""
+    },
+    {
+        "id":"4",
+        "titulo":"Baba",
+        "descricao":"Profissionais que prestam serviços de baba e cuidadores de bebe.",
+        "imagem":"img/baba_bebe.jpg",
+        "url":""
+    },
+    {
+        "id":"5",
+        "titulo":"Faxina",
+        "descricao":"Profissionais que prestam serviços faxina.",
+        "imagem":"img/faxina.jpg",
+        "url":""
+    },
+    {
+        "id":"6",
+        "titulo":"Doceiro",
+        "descricao":"Profissionais que prestam serviços de doces e salgados em geral.",
+        "imagem":"img/doceiro.jpg",
+        "url":""
+    },
+    {
+        "id":"7",
+        "titulo":"Técnico em Informatica",
+        "descricao":"Profissionais que prestam serviços de informatica diversos, entre eles, manutenção, desenvolvimento e etc...",
+        "imagem":"img/informatica.jpg",
+        "url":""
+    },
+    {
+        "id":"8",
+        "titulo":"Guincho",
+        "descricao":"Profissionais que prestam serviços de guinchamento de carros.",
+        "imagem":"img/guincho.png",
+        "url":""
+    }
+]
